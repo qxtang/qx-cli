@@ -6,7 +6,6 @@ import { APP_NAME, CREATE_QUESTIONS, CWD } from './constants';
 import { downloadRepo, logger } from './utils';
 
 class QxCli {
-  constructor() {}
 
   run(): void {
     const program = new Command();

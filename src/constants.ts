@@ -1,4 +1,4 @@
-import { TChoice, TQuestionItem } from './types';
+import { PC_STATIC_WEB, TChoice, TQuestionItem, WXAPP } from './types';
 
 export const CWD = process.cwd();
 export const APP_NAME = 'qx-cli';
@@ -6,11 +6,11 @@ export const APP_NAME = 'qx-cli';
 export const CHOICES: Array<TChoice> = [
   {
     name: '微信小程序',
-    value: 'wxapp'
+    value: WXAPP
   },
   {
     name: 'PC端企业官网',
-    value: 'pc-static-web'
+    value: PC_STATIC_WEB
   }
 ];
 

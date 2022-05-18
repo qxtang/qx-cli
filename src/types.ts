@@ -1,4 +1,7 @@
-export type TProjectType = 'wxapp' | 'pc-static-web'
+export const WXAPP = 'wxapp';
+export const PC_STATIC_WEB = 'pc-static-web';
+
+export type TProjectType = typeof WXAPP | typeof PC_STATIC_WEB
 
 export interface TChoice {
   name: string;
@@ -10,6 +13,6 @@ export interface TQuestionItem {
   name: string;
   message: string;
   choices?: Array<TChoice>;
-  validate?: (any) => any;
+  validate?: (value: string) => boolean;
 }
 

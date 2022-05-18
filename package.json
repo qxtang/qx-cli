@@ -7,7 +7,8 @@
   "scripts": {
     "prepublishOnly": "npm run compile",
     "dev": "rimraf bin && tsc -w",
-    "compile": "rimraf bin && tsc"
+    "compile": "rimraf bin && tsc",
+    "fix:eslint": "eslint src --ext .js,.ts --fix"
   },
   "files": [
     "readme.md",
@@ -41,6 +42,9 @@
   },
   "devDependencies": {
     "@types/node": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.25.0",
+    "@typescript-eslint/parser": "^5.25.0",
+    "eslint": "^8.15.0",
     "rimraf": "^3.0.2",
     "typescript": "^4.6.4"
   },
