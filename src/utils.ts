@@ -32,8 +32,6 @@ export const downloadRepo = async (options: { type: TProjectType; projectName: s
   const downloadPath = path.resolve(CWD, projectName);
   const repoUrl = `direct:https://gitee.com/qx9/${type}-demo#master`;
 
-  logger.info('downloadRepo', { options, repoUrl, downloadPath });
-
   const spinner = ora('正在拉取模板').start();
   try {
     await promisify(downloadGitRepo)(

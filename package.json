@@ -1,6 +1,6 @@
 {
   "name": "@qxtang/qx-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "搭建项目脚手架",
   "main": "index.js",
   "author": "qxtang <qx.tang@foxmail.com>",
@@ -20,6 +20,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/qxtang/qx-cli.git"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
   },
   "license": "ISC",
   "bugs": {
