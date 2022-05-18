@@ -1,0 +1,39 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "rootDir": "src",
+    "allowJs": true,
+    "baseUrl": ".",
+    "noImplicitAny": false,
+    "outDir": "./bin/",
+    "preserveConstEnums": true,
+    "experimentalDecorators": true,
+    "noEmitOnError": true,
+    "noUnusedLocals": true,
+    "esModuleInterop": true,
+    "strictNullChecks": true,
+    "noUnusedParameters": false,
+    "moduleResolution": "node",
+    "strictPropertyInitialization": false,
+    "module": "CommonJS",
+    "strict": true,
+    "target": "ES5",
+    "sourceMap": false,
+    "declaration": false,
+    "traceResolution": false,
+    "removeComments": true,
+    "lib": [
+      "esnext",
+      "dom"
+    ],
+    "resolveJsonModule": true,
+    "importHelpers": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "./bin/"
+  ]
+}
