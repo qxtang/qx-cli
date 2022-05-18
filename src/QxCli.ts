@@ -1,5 +1,9 @@
 import { Command } from 'commander';
-import { APP_NAME, CWD } from './constants';
+import path from 'path';
+import fs from 'fs-extra';
+import inquirer from 'inquirer';
+import { APP_NAME, CREATE_QUESTIONS, CWD } from './constants';
+import { downloadRepo, logger } from './utils';
 
 class QxCli {
   constructor() {}
@@ -10,19 +14,28 @@ class QxCli {
       .command('create')
       .description('创建项目')
       .action(this.create);
-    const options = program.opts<any>();
 
     program
       .name(APP_NAME)
       .usage('create');
     program.showHelpAfterError();
     program.parse(process.argv);
-
-    console.log('run:', { options, CWD });
   }
 
-  create(): void {
-    console.log('create');
+  async create(): Promise<void> {
+    const { type, projectName } = await inquirer.prompt(CREATE_QUESTIONS);
+
+    if (!/^[a-z\d-]+$/.test(projectName)) {
+      logger.error('项目名称只能由小写字母，数字，横杆组成');
+      process.exit(0);
+    }
+
+    if (fs.existsSync(path.resolve(CWD, projectName))) {
+      logger.error(`${projectName} 目录已存在`);
+      process.exit(0);
+    }
+
+    downloadRepo({ type, projectName });
   }
 }
 
