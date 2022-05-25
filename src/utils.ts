@@ -3,7 +3,7 @@ import path from 'path';
 import chalk from 'chalk';
 import { promisify } from 'util';
 import downloadGitRepo from 'download-git-repo';
-import { APP_NAME, CWD } from './constants';
+import { CWD } from './constants';
 import { TProjectType } from './types';
 
 /**
@@ -16,10 +16,10 @@ export const sleep = (t = 1000) => new Promise(resolve => setTimeout(resolve, t)
  */
 export const logger = {
   info: (...args: any) => {
-    console.log(`[${new Date().toLocaleString()}] - ${APP_NAME.toUpperCase()}:`, ...args);
+    console.log(`[${new Date().toLocaleString()}] -`, ...args);
   },
   error: (...args: any) => {
-    console.log(`[${new Date().toLocaleString()}] - ${APP_NAME.toUpperCase()} - ERROR:`, chalk.redBright(...args));
+    console.log(`[${new Date().toLocaleString()}] - ERROR:`, chalk.redBright(...args));
   },
 };
 
