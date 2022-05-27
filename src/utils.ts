@@ -4,7 +4,7 @@ import chalk from 'chalk';
 import { promisify } from 'util';
 import downloadGitRepo from 'download-git-repo';
 import { CWD } from './constants';
-import { TProjectType } from './types';
+import { TValue } from './types';
 
 /**
  * @description: 睡眠
@@ -20,17 +20,17 @@ export const logger = {
   },
   error: (...args: any) => {
     console.log(`[${new Date().toLocaleString()}] - ERROR:`, chalk.redBright(...args));
-  },
+  }
 };
 
 /**
  * @description: 下载模板
  */
-export const downloadRepo = async (options: { type: TProjectType; projectName: string }) => {
-  const { type, projectName } = options;
+export const downloadRepo = async (options: { type: TValue; projectName: string }) => {
+  const { type: { repo = '' }, projectName } = options;
 
   const downloadPath = path.resolve(CWD, projectName);
-  const repoUrl = `direct:https://gitee.com/qx9/${type}-demo#master`;
+  const repoUrl = `direct:${repo}#master`;
 
   const spinner = ora('正在拉取模板').start();
   try {

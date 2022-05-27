@@ -1,18 +1,17 @@
-export const WXAPP = 'wxapp';
-export const PC_STATIC_WEB = 'pc-static-web';
+export interface TValue {
+  repo: string;
+}
 
-export type TProjectType = typeof WXAPP | typeof PC_STATIC_WEB
-
-export interface TChoice {
+export interface TApp {
   name: string;
-  value: TProjectType;
+  value: TValue;
 }
 
 export interface TQuestionItem {
   type: 'input' | 'list';
   name: string;
   message: string;
-  choices?: Array<TChoice>;
+  choices?: Array<TApp>;
   validate?: (value: string) => boolean;
 }
 

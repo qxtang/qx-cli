@@ -1,16 +1,20 @@
-import { PC_STATIC_WEB, TChoice, TQuestionItem, WXAPP } from './types';
+import { TApp, TQuestionItem } from './types';
 
 export const CWD = process.cwd();
 export const APP_NAME = 'qx-cli';
 
-export const CHOICES: Array<TChoice> = [
+export const APP_LIST: Array<TApp> = [
   {
     name: '微信小程序',
-    value: WXAPP
+    value: { repo: 'https://gitee.com/qx9/wxapp-demo' }
   },
+  // {
+  //   name: 'PC端企业官网',
+  //   value: { repo: 'https://gitee.com/qx9/pc-static-web-demo' }
+  // },
   {
-    name: 'PC端企业官网',
-    value: PC_STATIC_WEB
+    name: 'react 组件打包 umd',
+    value: { repo: 'https://github.com/qxtang/react-umd-demo' }
   }
 ];
 
@@ -19,7 +23,7 @@ export const CREATE_QUESTIONS: TQuestionItem[] = [
     type: 'list',
     name: 'type',
     message: '请选择项目类型',
-    choices: CHOICES
+    choices: APP_LIST
   },
   {
     type: 'input',

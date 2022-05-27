@@ -1,6 +1,6 @@
 {
   "name": "@qxtang/qx-cli",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "搭建项目脚手架",
   "main": "index.js",
   "author": "qxtang <qx.tang@foxmail.com>",
